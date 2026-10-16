@@ -29,4 +29,12 @@ projects:
     tags:
       - AI
       - watsonx
-    lastUpdated: 1792173650467
+    lastUpdated: 1792173664326
+  ZFbedrock:
+    id: juVHUFmB
+    description: Amazon Bedrock AI integrations.
+    tags:
+      - AI
+      - Bedrock
+      - GenAI
+    lastUpdated: 1792173668619
