@@ -7,10 +7,3 @@ projects:
       - Operations
       - Enterprise
     lastUpdated: 1792172649495
-  ZFwatsonx:
-    id: oTUo34ua
-    description: IBM watsonx AI integrations.
-    tags:
-      - AI
-      - watsonx
-    lastUpdated: 1792172693480
