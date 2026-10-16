@@ -1,0 +1,126 @@
+swagger: '2.0'
+info:
+  description: Order Management External APIs - Version 1.0
+  version: '1.0'
+  title: OrderManagementAPIs
+host: prod548489.a-vir-r1.int.ipaas.automation.ibm.com
+basePath: /integration/restv2/development/fl8efa53c3627cf3758e10cd/OrderManagementAPIs
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /salesorder:
+    post:
+      operationId: salesorder_POST_1
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/body'
+      security:
+        - _apiKeyAuth: []
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+  /getOrder:
+    get:
+      operationId: getOrder_GET_2
+      parameters:
+        - name: id
+          in: query
+          required: true
+          type: string
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/body_1'
+      security:
+        - _apiKeyAuth: []
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+  /orders:
+    get:
+      operationId: orders_GET_3
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/body_2'
+      security:
+        - _apiKeyAuth: []
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+  /order:
+    get:
+      operationId: order_GET_4
+      parameters:
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+        - name: id
+          in: query
+          required: true
+          type: string
+      security:
+        - _apiKeyAuth: []
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+securityDefinitions:
+  _apiKeyAuth:
+    type: apiKey
+    name: X-IBM-Client-Id
+    in: header
+definitions:
+  body_1:
+    type: object
+    required:
+      - orderid
+    properties:
+      orderid:
+        type: integer
+        format: int64
+  body_2:
+    type: object
+    required:
+      - raw
+    properties:
+      raw:
+        $ref: '#/definitions/raw'
+  body:
+    type: object
+    required:
+      - customerID
+      - email
+      - productID
+      - quantity
+    properties:
+      customerID:
+        type: string
+      productID:
+        type: string
+      quantity:
+        type: string
+      email:
+        type: string
+  raw:
+    type: object
+security:
+  - _apiKeyAuth: []

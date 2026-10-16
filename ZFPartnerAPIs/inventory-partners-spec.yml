@@ -1,0 +1,106 @@
+swagger: '2.0'
+info:
+  description: Inventory APIs
+  version: '1.0'
+  title: InventoryAPIs
+host: prod548489.a-vir-r1.int.ipaas.automation.ibm.com
+basePath: /integration/restv2/development/fl716c50cdaa7ce0c6d9d192/InventoryAPIs
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /productcatalog:
+    get:
+      operationId: productcatalog_GET_1
+      parameters:
+        - in: body
+          name: bodyParameters
+          required: true
+          schema:
+            $ref: '#/definitions/productcatalog_GET_bodyParameters'
+      security:
+        - _apiKeyAuth: []
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+  /inventories:
+    get:
+      operationId: inventories_GET_2
+      parameters:
+        - in: body
+          name: bodyParameters
+          required: true
+          schema:
+            $ref: '#/definitions/inventories_GET_bodyParameters'
+      security:
+        - _apiKeyAuth: []
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+securityDefinitions:
+  _apiKeyAuth:
+    type: apiKey
+    name: X-IBM-Client-Id
+    in: header
+definitions:
+  raw:
+    type: object
+  raw_1:
+    type: object
+  body:
+    type: object
+    required:
+      - raw
+    properties:
+      raw:
+        $ref: '#/definitions/raw'
+  query_1:
+    type: object
+  productcatalog_GET_bodyParameters:
+    type: object
+    required:
+      - body
+      - headers
+      - query
+    properties:
+      headers:
+        $ref: '#/definitions/headers'
+      body:
+        $ref: '#/definitions/body'
+      query:
+        $ref: '#/definitions/query'
+  body_1:
+    type: object
+    required:
+      - raw
+    properties:
+      raw:
+        $ref: '#/definitions/raw_1'
+  headers:
+    type: object
+  inventories_GET_bodyParameters:
+    type: object
+    required:
+      - body
+      - headers
+      - query
+    properties:
+      headers:
+        $ref: '#/definitions/headers_1'
+      body:
+        $ref: '#/definitions/body_1'
+      query:
+        $ref: '#/definitions/query_1'
+  query:
+    type: object
+  headers_1:
+    type: object
+security:
+  - _apiKeyAuth: []

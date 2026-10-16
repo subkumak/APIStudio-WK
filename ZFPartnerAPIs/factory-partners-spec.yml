@@ -1,0 +1,73 @@
+swagger: '2.0'
+info:
+  description: Smart Manufacturing APIs - Version 1.0
+  version: '1.0'
+  title: SmartManufacturingAPIs
+host: prod548489.a-vir-r1.int.ipaas.automation.ibm.com
+basePath: >-
+  /integration/restv2/development/fl58c458f969cb42ef21ccd5/SmartManufacturingAPIs
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /devices:
+    get:
+      operationId: devices_GET_1
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/body'
+      security:
+        - _apiKeyAuth: []
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+  /servicerequests:
+    get:
+      operationId: servicerequests_GET_2
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/body_1'
+      security:
+        - _apiKeyAuth: []
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Access Denied
+securityDefinitions:
+  _apiKeyAuth:
+    type: apiKey
+    name: X-IBM-Client-Id
+    in: header
+definitions:
+  raw:
+    type: object
+  body:
+    type: object
+    required:
+      - raw
+    properties:
+      raw:
+        $ref: '#/definitions/raw'
+  body_1:
+    type: object
+    required:
+      - raw
+    properties:
+      raw:
+        $ref: '#/definitions/raw_1'
+  raw_1:
+    type: object
+security:
+  - _apiKeyAuth: []

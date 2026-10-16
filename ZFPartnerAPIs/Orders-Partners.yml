@@ -1,0 +1,14 @@
+kind: API
+apiVersion: api.ibm.com/v1
+metadata:
+  name: Orders-Partners
+  version: '2.0'
+  namespace: ZFPartnerAPIs
+  tags:
+    - partners
+  type: REST
+spec:
+  api-spec:
+    $path: ./orders-partners-spec-2.0.yml
+  policy-sequence:
+    - $ref: ZFPartnerAPIs:Orders-Ext-Policy:1.0
