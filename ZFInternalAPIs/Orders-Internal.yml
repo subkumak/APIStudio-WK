@@ -1,0 +1,13 @@
+kind: API
+apiVersion: api.ibm.com/v1
+metadata:
+  name: Orders-Internal
+  version: '1.0'
+  namespace: ZFInternalAPIs
+  tags: []
+  type: REST
+spec:
+  api-spec:
+    $path: ./orders-internal-spec.yml
+  policy-sequence:
+    - $ref: ZFInternalAPIs:Orders-Int-Policy:1.0
