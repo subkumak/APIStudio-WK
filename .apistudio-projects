@@ -6,4 +6,12 @@ projects:
       - Internal
       - Operations
       - Enterprise
-    lastUpdated: 1792173601093
+    lastUpdated: 1792173609245
+  ZFPartnerAPIs:
+    id: iBrRN1hh
+    description: Governed APIs for external partners.
+    tags:
+      - Partners
+      - Governance
+      - External
+    lastUpdated: 1792173613177
