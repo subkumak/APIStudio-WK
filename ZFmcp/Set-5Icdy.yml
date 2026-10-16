@@ -1,0 +1,17 @@
+kind: Set
+apiVersion: api.ibm.com/v1
+metadata:
+  name: Set-5Icdy
+  namespace: ZFmcp
+  version: '1.0'
+  tags: []
+  labels:
+    gatewayTypes:
+      - nano
+spec:
+  messageHeader:
+    action: set
+    headerName: x-Gateway-APIKey
+    value: 2d6bea7d-76d5-4b3f-8c6a-9dd2d5dc7bd7
+    messageName: request
+  valueType: plain
