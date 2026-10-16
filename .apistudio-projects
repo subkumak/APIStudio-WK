@@ -14,15 +14,7 @@ projects:
       - Partners
       - Governance
       - External
-    lastUpdated: 1792172661435
-  ZFmcp:
-    id: CJ17Xq63
-    description: Model Context Protocol integrations.
-    tags:
-      - AI
-      - Agents
-      - MCP
-    lastUpdated: 1792172678439
+    lastUpdated: 1792172940856
   ZFwatsonx:
     id: oTUo34ua
     description: IBM watsonx AI integrations.
@@ -37,4 +29,4 @@ projects:
       - AI
       - Bedrock
       - GenAI
-    lastUpdated: 1792172696340
+    lastUpdated: 1792172708326
