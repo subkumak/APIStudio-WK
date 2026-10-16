@@ -1,0 +1,33 @@
+kind: LLMProvider
+apiVersion: api.ibm.com/v1
+metadata:
+  name: bedrock-conn
+  namespace: ZFbedrock
+  version: '1.0'
+  tags: []
+  labels:
+    gatewayTypes:
+      - nano
+  domain: ai-platform
+spec:
+  provider:
+    type: custom
+    operations:
+      - InvokeOpenAiModels
+      - InvokeOpenAiModelsId
+      - InvokeOpenAiChatCompletions
+      - InvokeOpenAiEmbeddings
+    apiKeySecret: bedrock-api-key
+    tlsClientProfile: tls-client-profile-default:1.0.0
+    inputMessage: request
+    cachePolicy:
+      cache:
+        expire:
+          static:
+            seconds: 60
+        scope:
+          narrowScope: {}
+        ignoreControlDirectives: true
+    providerUrl: https://bedrock-mantle.us-east-1.api.aws
+  product:
+    $ref: ZFbedrock:product-bedrock-conn-75trd:1.0
