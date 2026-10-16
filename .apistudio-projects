@@ -22,4 +22,11 @@ projects:
       - AI
       - Agents
       - MCP
-    lastUpdated: 1792173631632
+    lastUpdated: 1792173647226
+  ZFwatsonx:
+    id: Zv9kjBxP
+    description: IBM watsonx AI integrations.
+    tags:
+      - AI
+      - watsonx
+    lastUpdated: 1792173650467
