@@ -1,0 +1,25 @@
+kind: Invoke
+apiVersion: api.ibm.com/v1
+metadata:
+  name: invoke-n9ipb
+  namespace: ZFmcp
+  version: '1.0'
+  tags: []
+  labels:
+    gatewayTypes:
+      - nano
+  domain: mcp
+spec:
+  endpoint:
+    http:
+      target:
+        tlsClientProfile: tls-client-profile-default:1.0.0
+        url: >-
+          'https://prod548489.a-vir-d1.apigw.ipaas.automation.ibm.com/gateway/SmartManufacturingAPIs/1'
+          & $pathAndQuery()
+        urlType: jsonata
+        persistentConnections: false
+        timeout: 30
+        decompressResponse: true
+        followRedirects: false
+        chunkedUpload: false

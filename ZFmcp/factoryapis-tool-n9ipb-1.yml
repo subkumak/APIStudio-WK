@@ -1,0 +1,41 @@
+kind: MCPTools
+apiVersion: api.ibm.com/v1
+metadata:
+  name: factoryapis-tool-n9ipb
+  namespace: ZFmcp
+  version: '1.0'
+  tags: []
+  description: Factory APIs
+  domain: mcp
+  labels:
+    api-spec: ./factoryapis-spec.yml
+spec:
+  tools:
+    - name: list_device
+      description: >-
+        This tool retrieves a list of all manufacturing devices connected to the
+        factory system. It provides an overview of available devices. 1. Can
+        retrieve device information.
+      inputSchema:
+        type: object
+        properties: {}
+      title: List manufacturing devices
+      x-api-binding:
+        operationPath: /devices
+        operationMethod: GET
+        api:
+          $path: ./factoryapis-spec.yml
+    - name: list_service_request
+      description: >-
+        This tool fetches all service requests related to manufacturing
+        operations. It helps track maintenance and support activities. 1. Can
+        retrieve service request details.
+      inputSchema:
+        type: object
+        properties: {}
+      title: List service requests
+      x-api-binding:
+        operationPath: /servicerequests
+        operationMethod: GET
+        api:
+          $path: ./factoryapis-spec.yml
