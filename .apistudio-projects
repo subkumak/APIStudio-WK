@@ -6,4 +6,12 @@ projects:
       - Internal
       - Operations
       - Enterprise
-    lastUpdated: 1792172642739
+    lastUpdated: 1792172649495
+  ZFPartnerAPIs:
+    id: wllHMVEr
+    description: Governed APIs for external partners.
+    tags:
+      - Partners
+      - Governance
+      - External
+    lastUpdated: 1792172652204
