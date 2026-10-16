@@ -1,0 +1,53 @@
+kind: DataPowerAssembly
+apiVersion: api.ibm.com/v1
+metadata:
+  name: Factory-Ext-Policy
+  namespace: ZFPartnerAPIs
+  version: '1.0'
+  tags:
+    - partners
+  labels:
+    gatewayTypes:
+      - datapower
+spec:
+  x-ibm-configuration:
+    gateway: datapower-api-gateway
+    assembly:
+      execute:
+        - set-variable:
+            version: 2.0.0
+            title: set-variable
+            actions:
+              - set: message.headers.X-INSTANCE-API-KEY
+                value: >-
+                  azI6ZWMxNzA0YTctMDJhOS00NTNlLWI5ZjMtNjMzODJjM2VmNjRkOkxLa1ViYjd6TG9oYlAydTVJWXVkT1ljelQzUW9QTldaM0hRR3hNWWl1ajA9
+                type: string
+            description: >-
+              Provide the necessary X-INSTANCE-API-KEY in the header for the
+              invoke
+        - invoke:
+            version: 2.3.0
+            title: invoke
+            backend-type: detect
+            header-control:
+              type: blocklist
+              values: []
+            parameter-control:
+              type: blocklist
+              values: []
+            http-version: HTTP/1.1
+            timeout: 60
+            verb: keep
+            chunked-uploads: true
+            persistent-connection: true
+            cache-response: protocol
+            cache-ttl: 900
+            websocket-upgrade: false
+            graphql-send-type: detect
+            target-url: >-
+              https://prod548489.a-vir-r1.int.ipaas.automation.ibm.com/integration/restv2/development/fl58c458f969cb42ef21ccd5/SmartManufacturingAPIs$(api.operation.path)
+    phase: realized
+    enforced: true
+    testable: true
+    cors:
+      enabled: true

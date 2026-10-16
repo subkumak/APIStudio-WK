@@ -1,0 +1,13 @@
+kind: API
+apiVersion: api.ibm.com/v1
+metadata:
+  name: Inventory-Partners
+  version: '1.0'
+  namespace: ZFPartnerAPIs
+  tags: []
+  type: REST
+spec:
+  api-spec:
+    $path: ./inventory-partners-spec.yml
+  policy-sequence:
+    - $ref: ZFPartnerAPIs:Inventory-Ext-Policy:1.0
