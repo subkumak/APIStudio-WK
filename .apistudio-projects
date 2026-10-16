@@ -14,4 +14,12 @@ projects:
       - Partners
       - Governance
       - External
-    lastUpdated: 1792173613177
+    lastUpdated: 1792173627011
+  ZFmcp:
+    id: SniKt18h
+    description: Model Context Protocol integrations.
+    tags:
+      - AI
+      - Agents
+      - MCP
+    lastUpdated: 1792173631632
