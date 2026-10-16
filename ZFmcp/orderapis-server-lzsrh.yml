@@ -1,0 +1,20 @@
+kind: MCPServer
+apiVersion: api.ibm.com/v1
+metadata:
+  name: orderapis-server-lzsrh
+  namespace: ZFmcp
+  version: '1.0'
+  tags: []
+  domain: mcp
+  labels:
+    origin: mcp-rest
+spec:
+  title: OrderAPIs MCP Server
+  protocolVersion: V2025_11_25
+  quota:
+    $ref: ZFmcp:zfmcp-quota-lzsrh:1.0
+  policy-sequence:
+    - $ref: ZFmcp:zfmcp-freeflowpolicysequence-lzsrh:1.0
+  capabilities:
+    tools:
+      - $ref: ZFmcp:orderapis-tool-lzsrh:1.0

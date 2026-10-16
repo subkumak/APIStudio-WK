@@ -1,0 +1,47 @@
+kind: MCPTools
+apiVersion: api.ibm.com/v1
+metadata:
+  name: orderapis-tool-lzsrh
+  namespace: ZFmcp
+  version: '1.0'
+  tags: []
+  description: Order APIs exposed through API Connect
+  domain: mcp
+  labels:
+    api-spec: ./orderapis-spec.yml
+spec:
+  tools:
+    - name: list_orders
+      description: >-
+        This tool retrieves a list of all orders from the Order APIs. It
+        provides a comprehensive view of current orders. 1. Can retrieve all
+        orders.
+      inputSchema:
+        type: object
+        properties: {}
+      title: List Orders
+      x-api-binding:
+        operationPath: /orders
+        operationMethod: GET
+        api:
+          $path: ./orderapis-spec.yml
+    - name: get_order
+      description: >-
+        This tool retrieves a specific order by its ID from the Order APIs. It
+        provides detailed information about the order. 1. Can retrieve order
+        details by order ID.
+      inputSchema:
+        type: object
+        properties:
+          orderId:
+            description: The unique identifier for the order.
+            x-parameter-location: query
+            type: string
+        required:
+          - orderId
+      title: Get Order By ID
+      x-api-binding:
+        operationPath: /order
+        operationMethod: GET
+        api:
+          $path: ./orderapis-spec.yml

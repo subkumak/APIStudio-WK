@@ -1,0 +1,80 @@
+openapi: 3.0.3
+info:
+  title: OrderAPIs
+  version: '1.0'
+  description: Order APIs exposed through API Connect
+servers:
+  - url: >-
+      http://prod548489.a-vir-d1.apigw.ipaas.automation.ibm.com/gateway/OrderManagementAPIs/1.0
+paths:
+  /orders:
+    get:
+      operationId: listOrders
+      summary: List Orders
+      description: Retrieve all orders.
+      responses:
+        '200':
+          description: Orders retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  output:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Order'
+                  result:
+                    type: object
+                    properties:
+                      pagination:
+                        type: object
+                        properties:
+                          capacity:
+                            type: string
+  /order:
+    get:
+      operationId: getOrderById
+      summary: Get Order By ID
+      description: Retrieve a specific order.
+      parameters:
+        - name: orderId
+          in: query
+          required: true
+          description: Unique order identifier
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Order retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+components:
+  schemas:
+    Order:
+      type: object
+      properties:
+        id:
+          type: string
+        customerId:
+          type: string
+        statusId:
+          type: string
+        totalValue:
+          type: string
+        orderDate:
+          type: string
+        shipDate:
+          type: string
+        isUrgent:
+          type: boolean
+        currencyId:
+          type: string
+        processTypeId:
+          type: string
+        demoId:
+          type: string
+        orderItemCount:
+          type: integer

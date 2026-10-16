@@ -1,0 +1,18 @@
+kind: FreeFlowPolicySequence
+apiVersion: api.ibm.com/v1
+metadata:
+  name: zfmcp-freeflowpolicysequence-lzsrh
+  namespace: ZFmcp
+  version: '1.0'
+  tags: []
+  labels:
+    gatewayTypes:
+      - nano
+  domain: mcp
+spec:
+  main:
+    - $ref: ZFmcp:Set-5Icdy:1.0
+    - $ref: ZFmcp:Set-xcg5C:1.0
+    - $ref: ZFmcp:invoke-lzsrh:1.0
+  monitoring:
+    $ref: ZFmcp:telemetry-lzsrh:1.0

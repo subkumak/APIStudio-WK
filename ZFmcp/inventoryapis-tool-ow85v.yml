@@ -1,0 +1,41 @@
+kind: MCPTools
+apiVersion: api.ibm.com/v1
+metadata:
+  name: inventoryapis-tool-ow85v
+  namespace: ZFmcp
+  version: '1.0'
+  tags: []
+  description: Inventory APIs
+  domain: mcp
+  labels:
+    api-spec: ./inventoryapis-spec.yml
+spec:
+  tools:
+    - name: browse_product
+      description: >-
+        This tool retrieves product catalog information from the inventory
+        system. It provides details about available products. 1. It can fetch
+        product data.
+      inputSchema:
+        type: object
+        properties: {}
+      title: List ecommerce products
+      x-api-binding:
+        operationPath: /productcatalog
+        operationMethod: GET
+        api:
+          $path: ./inventoryapis-spec.yml
+    - name: list_inventories
+      description: >-
+        This tool retrieves current inventory levels from the inventory system.
+        It provides insights into stock availability. 1. It can track inventory
+        quantities.
+      inputSchema:
+        type: object
+        properties: {}
+      title: List ecommerce inventories
+      x-api-binding:
+        operationPath: /inventories
+        operationMethod: GET
+        api:
+          $path: ./inventoryapis-spec.yml
