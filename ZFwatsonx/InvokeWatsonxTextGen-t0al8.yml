@@ -1,0 +1,18 @@
+kind: InvokeWatsonxTextGen
+apiVersion: api.ibm.com/v1
+metadata:
+  name: InvokeWatsonxTextGen-t0al8
+  namespace: ZillaForgeWX
+  version: '1.0'
+  tags: []
+  labels:
+    gatewayTypes:
+      - nano
+spec:
+  region: us-south
+  opVersion: placeholder-op-version
+  tlsClientProfile: tls-client-profile-default:1.0.0
+  projectId: 979c26f2-7efb-4085-9e94-c31aae76ba08
+  inputMessage: request
+  outputMessage: response
+  cachePolicy: disabled

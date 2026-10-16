@@ -1,0 +1,14 @@
+kind: Product
+apiVersion: api.ibm.com/v1
+metadata:
+  name: product-watsonx-conn-t0al8
+  namespace: ZillaForgeWX
+  version: '1.0'
+  tags: []
+  domain: ai-platform
+  description: ''
+spec:
+  apis:
+    - $ref: ZillaForgeWX:api-watsonx-conn-t0al8:1.0
+  plans:
+    - $ref: ZillaForgeWX:plan-watsonx-conn-t0al8:1.0
